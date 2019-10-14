@@ -23,4 +23,4 @@ class DashboardRoute extends Component {
   }
 }
 
-export default DashboardRoute;
+export default withRouter(DashboardRoute);
