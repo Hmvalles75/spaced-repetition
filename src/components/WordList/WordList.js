@@ -36,7 +36,7 @@ class Wordlist extends React.Component {
           <Link to="/learn">Start Practicing</Link>
         </Button>
         <h4 className="total-correct">
-          Total correct answers: {this.context.language.total.score}
+          Total correct answers: {this.context.language.total_score}
         </h4>
       </div>
     );
