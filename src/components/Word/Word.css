@@ -1,0 +1,10 @@
+.Word {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Word p h4 {
+  padding: 10px;
+  margin: 0;
+}
