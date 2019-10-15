@@ -1,52 +1,38 @@
 import config from "../config";
 import TokenService from "./token-service";
-import LearningContext from "../contexts/LearningContext";
 
 const LanguageApiService = {
-  getWords() {
-    return fetch(`${config.API_ENDPOINT}/api/language`, {
-      method: "GET",
+  getUserInfo() {
+    return fetch(`${config.API_ENDPOINT}/language`, {
       headers: {
-        authorization: `Bearer ${TokenService.getAuthToken()}`
+        authorization: `bearer ${TokenService.getAuthToken()}`
       }
     }).then(res =>
       !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
     );
   },
 
-  getHead() {
-    return fetch(`${config.API_ENDPOINT}api/language/head`, {
-      method: "GET",
+  getNextWord() {
+    return fetch(`${config.API_ENDPOINT}/language/head`, {
       headers: {
-        authorization: `Bearer ${TokenService.getAuthToken()}`
+        authorization: `bearer ${TokenService.getAuthToken()}`
       }
     }).then(res =>
       !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
     );
   },
-  submitGuess(guess) {
-    const body = JSON.stringify({
-      guess: guess
-    });
 
-    return fetch(`${config.API_ENDPOINT}/api/language/guess`, {
+  postGuess(guess) {
+    return fetch(`${config.API_ENDPOINT}/language/guess`, {
       method: "POST",
       headers: {
-        authorization: `Bearer ${TokenService.getAuthToken()}`,
-        Content_type: "application/json"
+        Authorization: `bearer ${TokenService.getAuthToken()}`,
+        "content-type": "application/json"
       },
-      body: body
-    })
-      .then(res => {
-        if (!res.ok) {
-          LearningContext.setError(
-            "Something went wrong while processing your guess."
-          );
-          return res.json().then(e => Promise.reject(e.error));
-        }
-        return res.json();
-      })
-      .catch(e => console.error("guess fetch failure"));
+      body: JSON.stringify(guess)
+    }).then(res =>
+      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+    );
   }
 };
 export default LanguageApiService;

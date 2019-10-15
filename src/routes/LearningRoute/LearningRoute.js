@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import WordList from "../../components/WordList/WordList";
 
 class LearningRoute extends Component {
   render() {
