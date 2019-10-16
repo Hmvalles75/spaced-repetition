@@ -1,22 +1,20 @@
-import React, { Component } from 'react'
-import { WordsContext } from '../../contexts/Words'
+import React, { Component } from "react";
+import { WordsContext } from "../../contexts/Words";
 
 class Score extends Component {
-  static contextType = WordsContext
+  static contextType = WordsContext;
 
   render() {
-    // console.log(this.context)
+    // console.log(this.context);
     return (
       <section className="Score">
         <p>
-          Your total score is:{' '}
-          {this.context.wordObj
-            ? this.context.wordObj.totalScore
-            : 'null'}
+          Your total score is:{" "}
+          {this.context.wordObj ? this.context.wordObj.totalScore : "null"}
         </p>
       </section>
-    )
+    );
   }
 }
 
-export default Score
+export default Score;
