@@ -19,7 +19,7 @@ class Dashboard extends Component {
         .catch(res => {
           this.setState({ error: res.error });
         });
-    }, 200);
+    }, 500);
   }
 
   renderUserInfo = () => {
