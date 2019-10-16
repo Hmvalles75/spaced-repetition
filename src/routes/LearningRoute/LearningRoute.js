@@ -1,34 +1,34 @@
-import React, { Component } from 'react'
-import LanguageApiService from '../../services/language-api-service'
-import Question from '../../components/Question/Question'
-import Answer from '../../components/Answer/Answer'
+import React, { Component } from "react";
+import LanguageApiService from "../../services/language-api-service";
+import Question from "../../components/Question/Question";
+import Answer from "../../components/Answer/Answer";
 // import Score from '../../components/Score/Score'
-import {WordContext} from '../../contexts/Word'
+import { WordContext } from "../../contexts/Word";
 // import { withRouter } from "react-router-dom";
 
 class LearningRoute extends Component {
-  static contextType = WordContext
-  state = { qOra: true, guess: null, loading: true} // true whenever your on a question
+  static contextType = WordContext;
+  state = { qOra: true, guess: null, loading: true }; // true whenever your on a question
 
   handleSubmitAnswer = (guess, guessRes) => {
     // console.log(this.context)
     // this.context.setGuessRes({...guessRes})
-    this.setState({ qOra: false, guess: guess, loading:false })
-  }
+    this.setState({ qOra: false, guess: guess, loading: false });
+  };
 
   handleNextQuestion = () => {
-    this.setState({ qOra: true })
-  }
+    this.setState({ qOra: true });
+  };
 
   async componentDidMount() {
     try {
-      const wordObj = await LanguageApiService.getHead() // should this be getHead()?
-      this.context.setWordObj({ ...wordObj })
+      const wordObj = await LanguageApiService.getHead(); // should this be getHead()?
+      this.context.setWordObj({ ...wordObj });
       // console.log(wordObj)
     } catch (e) {
-      console.log(e)
+      console.log(e);
     }
-    this.setState({loading: false})
+    this.setState({ loading: false });
   }
 
   render() {
@@ -43,17 +43,17 @@ class LearningRoute extends Component {
             toggleLoading={this.toggleLoading}
           />
         ) : (
-          <Answer 
-          handleNextQuestion={this.handleNextQuestion} 
-          guess={this.state.guess}
-          guessRes={this.state.guessRes}
-          toggleLoading={this.toggleLoading}
+          <Answer
+            handleNextQuestion={this.handleNextQuestion}
+            guess={this.state.guess}
+            guessRes={this.state.guessRes}
+            toggleLoading={this.toggleLoading}
           />
         )}
         {/* <Score /> */}
       </section>
-    )
+    );
   }
 }
 
-export default LearningRoute
+export default LearningRoute;
