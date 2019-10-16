@@ -1,0 +1,30 @@
+.wordListItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.practiceButton {
+  text-decoration: none;
+  border: solid gray 1px;
+  font-size: 25px;
+  padding: 10px 30px;
+  border-radius: 20px;
+  background-color: #78c800;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty {
+  margin-top: 40px;
+}

@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import LanguageApiService from "../../services/language-api-service";
 import UserContext from "../../contexts/UserContext";
 
+import "./Dashboard.css";
+
 class Dashboard extends Component {
   static contextType = UserContext;
 
@@ -40,7 +42,6 @@ class Dashboard extends Component {
       return (
         <li key={word.id} className="wordListItem">
           <h4>{word.original}</h4>
-          <br />
           correct answer count: {word.correct_count}
           <br />
           incorrect answer count: {word.incorrect_count}
@@ -50,7 +51,7 @@ class Dashboard extends Component {
     console.log(this.context.words);
     return (
       <div>
-        <h3>Words to practice</h3>
+        <h3>Words to practice:</h3>
         <ul className="wordlist">{list}</ul>
       </div>
     );
@@ -67,6 +68,7 @@ class Dashboard extends Component {
         <Link className="practiceButton" to="/learn">
           Start practicing
         </Link>
+        <div className="empty"></div>
       </div>
     );
   }
