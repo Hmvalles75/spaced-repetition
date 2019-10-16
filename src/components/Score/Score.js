@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import { WordsContext } from '../../contexts/Words'
+import { WordContext } from '../../contexts/Word'
 
 class Score extends Component {
-  static contextType = WordsContext
+  static contextType = WordContext
 
   render() {
     // console.log(this.context)
     return (
-      <section className="Score">
+      <section className="DisplayScore">
         <p>
           Your total score is:{' '}
           {this.context.wordObj

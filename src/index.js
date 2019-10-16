@@ -7,14 +7,14 @@ import App from './components/App/App'
 import './setup-icons'
 import './index.css'
 import * as serviceWorker from './serviceWorker'
-import { WordsProvider } from './contexts/Words'
+import { WordProvider } from './contexts/Word'
 
 ReactDOM.render(
   <BrowserRouter>
     <UserProvider>
-      <WordsProvider>
+      <WordProvider>
         <App />
-      </WordsProvider>
+      </WordProvider>
     </UserProvider>
   </BrowserRouter>,
   document.getElementById('root')
