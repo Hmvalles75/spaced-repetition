@@ -3,22 +3,22 @@ import AuthApiService from "../services/auth-api-service";
 import TokenService from "../services/token-service";
 import IdleService from "../services/idle-service";
 
-const UserContext = React.createContext({
-  user: {},
-  error: null,
-  language: {},
-  words: [],
-  nextWord: {},
-  setError: () => {},
-  clearError: () => {},
-  setUser: () => {},
-  setWords: () => [],
-  setNextWord: () => {},
-  setLanguage: () => {},
-  processLogin: () => {},
-  handleSubmit: () => {},
-  processLogout: () => {}
-});
+const UserContext = React.createContext(
+  // user: {},
+  // error: null,
+  // language: {},
+  // words: [],
+  // nextWord: {},
+  // setError: () => {},
+  // clearError: () => {},
+  // setUser: () => {},
+  // setWords: () => [],
+  // setNextWord: () => {},
+  // setLanguage: () => {},
+  // processLogin: () => {},
+  // handleSubmit: () => {},
+  // processLogout: () => {}
+);
 
 export default UserContext;
 
@@ -47,14 +47,14 @@ export class UserProvider extends Component {
     IdleService.setIdleCallback(this.logoutBecauseIdle);
   }
 
-  componentDidMount() {
-    if (TokenService.hasAuthToken()) {
-      IdleService.regiserIdleTimerResets();
-      TokenService.queueCallbackBeforeExpiry(() => {
-        this.fetchRefreshToken();
-      });
-    }
-  }
+  // componentDidMount() {
+  //   if (TokenService.hasAuthToken()) {
+  //     IdleService.regiserIdleTimerResets();
+  //     TokenService.queueCallbackBeforeExpiry(() => {
+  //       this.fetchRefreshToken();
+  //     });
+  //   }
+  // }
 
   componentWillUnmount() {
     IdleService.unRegisterIdleResets();
@@ -83,7 +83,7 @@ export class UserProvider extends Component {
   };
 
   setNextWord = word => {
-    console.log(word);
+    // console.log(word);
     this.setState({ nextWord: word });
   };
 
@@ -92,7 +92,7 @@ export class UserProvider extends Component {
   };
 
   handleSubmit = answer => {
-    console.log(answer);
+    // console.log(answer);
     this.setState({ answer: answer });
   };
 

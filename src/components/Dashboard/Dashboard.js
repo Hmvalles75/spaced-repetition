@@ -48,7 +48,7 @@ class Dashboard extends Component {
         </li>
       );
     });
-    console.log(this.context.words);
+    // console.log(this.context.words);
     return (
       <div>
         <h3>Words to practice:</h3>
@@ -65,7 +65,7 @@ class Dashboard extends Component {
         {this.renderLanguageInfo()}
         {this.renderUserInfo()}
         {this.renderSubHeading()}
-        <Link className="practiceButton" to="/learn">
+        <Link className="link-Button" to="/learn">
           Start practicing
         </Link>
         <div className="empty"></div>

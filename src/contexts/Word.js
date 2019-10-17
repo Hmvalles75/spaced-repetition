@@ -18,7 +18,7 @@ export class WordProvider extends React.Component {
 
   setGuessRes = guessRes => {
     this.setState({ guessRes })
-    console.log('context setGuessResp():', this.state.wordObj)
+    // console.log('context setGuessResp():', this.state.wordObj)
   }
 
   // async componentDidMount() {

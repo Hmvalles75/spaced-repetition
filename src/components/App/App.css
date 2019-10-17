@@ -22,13 +22,24 @@
 .input-div input{
   margin: 5px;
 }
+.link-Button {
+  text-decoration: none;
+  border: solid gray 1px;
+  font-size: 25px;
+  padding: 10px 30px;
+  border-radius: 20px;
+  background-color: #78c800;
+  color: white;
+  width: 250px;
+  margin: 0 auto;
+}
 
 
 h1{
   text-align: center;
   border-bottom: 2px white solid;
   width: 80%;
-  margin: 20px auto;
+  margin: 5px auto;
   padding-bottom: 10px;
   /* background-color: #1cb0f6; */
 }
@@ -112,6 +123,7 @@ nav a{
   text-align: center;
   border-radius: 20px;
   box-shadow: 3px 3px;
+  margin: 10px;
 }
 
 p{

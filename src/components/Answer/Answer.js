@@ -38,7 +38,7 @@ class Answer extends Component {
   }
 
   render() {
-    console.log(this.context)
+    // console.log(this.context)
     if (this.context.guessRes) {
       return (
         <section className="Answer">

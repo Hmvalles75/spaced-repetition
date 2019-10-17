@@ -36,6 +36,14 @@ class LoginForm extends Component {
       })
   }
 
+  // componentDidMount() {
+  //   if (TokenService.hasAuthToken()) {
+  //     IdleService.regiserIdleTimerResets();
+  //     TokenService.queueCallbackBeforeExpiry(() => {
+  //       this.fetchRefreshToken();
+  //     });
+  //   }
+  // }
   componentDidMount() {
     this.firstInput.current.focus()
   }

@@ -1,0 +1,9 @@
+.display-user{
+  font-size: 20px;
+  text-align: left;
+  float: left;
+  margin: 10px;
+}
+.user-name{
+  color: white;
+}
