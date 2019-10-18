@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { WordContext } from '../../contexts/Word'
 import Score from '../Score/Score'
+import Button from "../Button/Button";
 
 class Answer extends Component {
   static contextType = WordContext
@@ -43,7 +44,7 @@ class Answer extends Component {
       return (
         <section className="Answer">
           {this.context.guessRes.isCorrect ? this.correct() : this.incorrect()}
-          <button onClick={this.props.handleNextQuestion}>Try another word!</button>
+          <Button onClick={this.props.handleNextQuestion}>Try another word!</Button>
           <Score />
           <div className="Question-info">
             <p>

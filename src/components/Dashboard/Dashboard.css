@@ -1,9 +1,32 @@
+.dashboard{
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.Dashboard-lang-total h2{
+  margin-bottom: 0;
+  border-radius: 20px 20px 0 0;
+}
+.Dashboard-lang-total p{
+  margin-top: 0;
+  border-radius: 0 0 20px 20px;
+  padding: 10px;
+}
+
 .wordListItem {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 40px;
+  margin: 10px;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 10px 5px 10px 5px;
+  /* max-width: 300px; */
+}
+
+.wordListItem *{
+  margin: 5px;
 }
 
 h3 {

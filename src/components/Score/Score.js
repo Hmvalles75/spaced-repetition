@@ -8,7 +8,7 @@ class Score extends Component {
     // console.log(this.context);
     return (
       <section className="DisplayScore">
-        <p>
+        <p className="total">
           Your total score is:{" "}
           {this.context.guessRes ? this.context.guessRes.totalScore : this.context.wordObj?this.context.wordObj.totalScore:''}
         </p>

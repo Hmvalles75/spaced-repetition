@@ -3,6 +3,7 @@ import LanguageApiService from "../../services/language-api-service";
 import { WordContext } from "../../contexts/Word";
 import Score from "../Score/Score";
 import "./Question.css";
+import Button from "../Button/Button";
 
 export default class Question extends React.Component {
   static contextType = WordContext;
@@ -11,11 +12,13 @@ export default class Question extends React.Component {
   handleSubmit = async e => {
     e.preventDefault();
     const guess = e.target.guess.value;
+    // console.log(guess)
     try {
       const guessRes = await LanguageApiService.postListGuess({ guess: guess });
+      // console.log('HERE')
       this.context.setGuessRes({ ...guessRes });
       this.props.handleSubmitAnswer(guess);
-      console.log("guessRes:", guessRes);
+      // console.log("guessRes:", guessRes);
     } catch (err) {
       console.log(err);
     }
@@ -35,7 +38,9 @@ export default class Question extends React.Component {
             What's the translation for this word?
           </label>
           <input type="text" id="learn-guess-input" name="guess" required />
-          <button type="submit">Submit your answer</button>
+          {/* <input type="submit" value="Send Request"/> */}
+          {/* <button type="submit">Submit your answer</button> */}
+          <Button type="submit">Submit your answer</Button>
         </form>
         <Score />
         <div className="Question-info">

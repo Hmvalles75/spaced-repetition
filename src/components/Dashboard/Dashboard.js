@@ -25,10 +25,10 @@ class Dashboard extends Component {
   renderLanguageInfo = () => {
     const { language = {} } = this.context;
     return (
-      <div>
+      <div className="Dashboard-lang-total">
         <h2>Learn {language.name}</h2>
-        <p>Total correct answers: {language.total_score}</p>
-      </div>
+        <p className='total'> Total correct answers: {language.total_score}</p>
+      </div >
     );
   };
 
@@ -38,9 +38,9 @@ class Dashboard extends Component {
       return (
         <li key={word.id} className="wordListItem">
           <h4>{word.original}</h4>
-          correct answer count: {word.correct_count}
-          <br />
-          incorrect answer count: {word.incorrect_count}
+          <p>correct answer count: {word.correct_count}</p>
+          {/* <br /> */}
+          <p>incorrect answer count: {word.incorrect_count}</p>
         </li>
       );
     });

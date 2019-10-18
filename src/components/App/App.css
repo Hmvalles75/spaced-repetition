@@ -32,8 +32,18 @@
   color: white;
   width: 250px;
   margin: 0 auto;
+  transition: .5s;
+}
+.link-Button:hover{
+  background-color: #5d9b00;
 }
 
+.total{
+  background-color: #F8D043;
+  color: rgb(197, 103, 21);
+  border-radius: 20px;
+  /* transition: 1s; */
+}
 
 h1{
   text-align: center;
@@ -61,18 +71,32 @@ header{
 }
 
 h2{
-  border-bottom: 1px gray solid;
-  width: 50%;
+  border-bottom: 1px;
+  width: 80%;
   margin: 20px auto;
-  padding-bottom: 10px;
+  padding: 10px;
+  background-color: #CE82FF;
+  border-radius: 20px;
+  color: white;
 }
 
 h3{
+  margin: 0 auto;
   text-align: center;
+  font-size: 25px;
+  /* border-bottom: 2px solid #FC4848;
+  border-radius: 10px; */
+  width: 80%;
+  padding: 10px 5px 5px 10px;
+}
+
+h4{
+  font-size: 20px;
 }
 
 label{
   font-size: 20px;
+  margin: 20px;
 }
 input{
   border: 1px solid black;
@@ -81,6 +105,7 @@ input{
   padding: 5px;
   border-radius: 20px;
   border-color: gray;
+  margin-bottom: 10px;
 }
 
 form footer{
@@ -89,13 +114,20 @@ form footer{
 }
 
 button{
-  border: solid gray 1px;
+  border: solid #528800 2px;
   font-size: 25px;
   padding: 10px 30px;
   margin: 10px;
   border-radius: 20px;
   background-color: #78c800;
   color: white;
+  max-width: 300px;
+  box-shadow: 3px 3px #5d9b00;
+  transition: .5s;
+}
+button:hover{
+  cursor: pointer;
+  background-color: #5d9b00;
 }
 
 form{
@@ -113,6 +145,7 @@ form{
 nav{
   display: flex;
   width: 100%;
+  flex-direction: row;
   justify-content: space-between;
 }
 
@@ -128,6 +161,11 @@ nav a{
   border-radius: 20px;
   box-shadow: 3px 3px;
   margin: 10px;
+  transition: .5s;
+}
+nav a:hover{
+  cursor: pointer;
+  background-color: lightgreen;
 }
 
 p{
@@ -142,6 +180,27 @@ p{
   box-shadow: 0px 0px 6px blue;
 }
 
+ul{
+  /* margin: 0 auto;
+  padding:0;
+  width: 85%; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding:0;
+}
+
+section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (min-width: 800px){
+  .wordListItem{
+    /* max-width: 400px; */
+  }
+}
 
 
 
