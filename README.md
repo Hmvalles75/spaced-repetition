@@ -3,7 +3,7 @@ an app which uses spaced repetition to help people memorize a foreign language. 
 
 App Name: Spaced-Repetition
 
-Demo: https://mighty-harbor-79237.herokuapp.com/
+Demo: https://spaced-repetition.krill.now.sh
 
 Link to client repo: https://github.com/Hmvalles75/spaced-repetition.git
 
