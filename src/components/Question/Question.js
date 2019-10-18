@@ -27,7 +27,7 @@ export default class Question extends React.Component {
       <div className="Question">
         <h2>Translate the word:</h2>
         <span className="Question-word">
-          {this.context.guessRes ? this.context.guessRes.nextWord : ""}
+          {this.context.guessRes ? this.context.guessRes.nextWord : this.context.wordObj?this.context.wordObj.nextWord:''}
         </span>
 
         <form onSubmit={this.handleSubmit}>

@@ -10,7 +10,7 @@ class Score extends Component {
       <section className="DisplayScore">
         <p>
           Your total score is:{" "}
-          {this.context.guessRes ? this.context.guessRes.totalScore : "null"}
+          {this.context.guessRes ? this.context.guessRes.totalScore : this.context.wordObj?this.context.wordObj.totalScore:''}
         </p>
       </section>
     );

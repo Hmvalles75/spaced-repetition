@@ -22,10 +22,6 @@ class Dashboard extends Component {
     }, 500);
   }
 
-  renderUserInfo = () => {
-    return <p>{this.context.user.name}'s stats:</p>;
-  };
-
   renderLanguageInfo = () => {
     const { language = {} } = this.context;
     return (
@@ -51,7 +47,7 @@ class Dashboard extends Component {
     // console.log(this.context.words);
     return (
       <div>
-        <h3>Words to practice:</h3>
+        <h3>Words to practice</h3>
         <ul className="wordlist">{list}</ul>
       </div>
     );
@@ -63,7 +59,6 @@ class Dashboard extends Component {
         <p className="dashboard">Dashboard</p>
 
         {this.renderLanguageInfo()}
-        {this.renderUserInfo()}
         {this.renderSubHeading()}
         <Link className="link-Button" to="/learn">
           Start practicing
