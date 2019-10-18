@@ -6,6 +6,7 @@
 .App{
   display: flex;
   flex-direction: column;
+  margin-bottom: 100px;
 }
 
 .alert{
@@ -44,6 +45,14 @@
   border-radius: 20px;
   /* transition: 1s; */
 }
+.small-total{
+  background-color: #F8D043;
+  color: rgb(197, 103, 21);
+  border-radius: 20px;
+}
+.DisplayScore{
+  width: 100%;
+}
 
 h1{
   text-align: center;
@@ -51,6 +60,7 @@ h1{
   width: 80%;
   margin: 5px auto;
   padding-bottom: 10px;
+  color: white;
   /* background-color: #1cb0f6; */
 }
 

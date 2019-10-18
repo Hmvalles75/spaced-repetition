@@ -49,16 +49,16 @@ class Answer extends Component {
           <div className="Question-info">
             <p>
               You have answered this word correctly{' '}
-              {this.context.wordObj
-                ? this.context.wordObj.wordCorrectCount
-                : ''}{' '}
+              {this.context.guessRes.isCorrect
+                ? this.context.wordObj.wordCorrectCount + 1
+                : this.context.wordObj.wordCorrectCount}{' '}
               times.
             </p>
             <p>
               You have answered this word incorrectly{' '}
-              {this.context.wordObj
+              {this.context.guessRes.isCorrect
                 ? this.context.wordObj.wordIncorrectCount
-                : ''}{' '}
+                : this.context.wordObj.wordIncorrectCount + 1}{' '}
               times.
             </p>
           </div>

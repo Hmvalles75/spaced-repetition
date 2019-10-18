@@ -42,7 +42,8 @@ class Header extends Component {
           ? this.renderLogoutLink()
           : this.renderLoginLink()}
         <h1>
-          <Link to="/">Spaced repetition</Link>
+          {/* <Link to="/">Spaced repetition</Link> */}
+          Spaced Repetition
         </h1>
       </header>
     );
