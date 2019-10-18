@@ -1,25 +1,25 @@
-import React from 'react'
-import LanguageApiService from '../../services/language-api-service'
-import { WordContext } from '../../contexts/Word'
-import Score from '../Score/Score'
-import './Question.css'
+import React from "react";
+import LanguageApiService from "../../services/language-api-service";
+import { WordContext } from "../../contexts/Word";
+import Score from "../Score/Score";
+import "./Question.css";
 
 export default class Question extends React.Component {
-  static contextType = WordContext
+  static contextType = WordContext;
 
   // check if correct, and move to <Answer /> component
   handleSubmit = async e => {
-    e.preventDefault()
-    const guess = e.target.guess.value
+    e.preventDefault();
+    const guess = e.target.guess.value;
     try {
-      const guessRes = await LanguageApiService.postListGuess({guess:guess})
-      this.context.setGuessRes({...guessRes})
-      this.props.handleSubmitAnswer(guess)
-      // console.log('guessRes:',guessRes)
+      const guessRes = await LanguageApiService.postListGuess({ guess: guess });
+      this.context.setGuessRes({ ...guessRes });
+      this.props.handleSubmitAnswer(guess);
+      console.log("guessRes:", guessRes);
     } catch (err) {
-      console.log(err)
+      console.log(err);
     }
-  }
+  };
 
   render() {
     // console.log(this.context)
@@ -27,7 +27,7 @@ export default class Question extends React.Component {
       <div className="Question">
         <h2>Translate the word:</h2>
         <span className="Question-word">
-          {this.context.wordObj ? this.context.wordObj.nextWord : ''}
+          {this.context.guessRes ? this.context.guessRes.nextWord : ""}
         </span>
 
         <form onSubmit={this.handleSubmit}>
@@ -40,19 +40,19 @@ export default class Question extends React.Component {
         <Score />
         <div className="Question-info">
           <p>
-            You have answered this word correctly{' '}
-            {this.context.wordObj ? this.context.wordObj.wordCorrectCount : ''}{' '}
+            You have answered this word correctly{" "}
+            {this.context.wordObj ? this.context.wordObj.wordCorrectCount : ""}{" "}
             times.
           </p>
           <p>
-            You have answered this word incorrectly{' '}
+            You have answered this word incorrectly{" "}
             {this.context.wordObj
               ? this.context.wordObj.wordIncorrectCount
-              : ''}{' '}
+              : ""}{" "}
             times.
           </p>
         </div>
       </div>
-    )
+    );
   }
 }
