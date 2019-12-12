@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "alias": "Spaced-Rep",
+  "name": "Spaced-Repetition",
+  "routes": [
+    {
+      "src": "^/favicon.ico$",
+      "dest": "/favicon.ico"
+    }
+  ]
+}
