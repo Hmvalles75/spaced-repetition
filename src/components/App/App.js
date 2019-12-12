@@ -32,8 +32,9 @@ export default class App extends Component {
             <PublicOnlyRoute path={"/login"} component={LoginRoute} />
             <Route component={NotFoundRoute} />
           </Switch>
-          <footer className="page-footer"> </footer>
+          {/* <footer className="page-footer"> </footer> */}
         </main>
+        <footer className="page-footer"> </footer>
       </div>
     );
   }
